@@ -196,29 +196,37 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
       top: ehTelaDeCadastro ? 535/*altera a posicao do botao de submit na tela do sign up(registre-se)*/ : 430,/*altera a posicao do botao de submit na tela de login*/ // se eu estiver na tela do sign up eu ponho esta altura determinado, caso contrario eu ponho a outra altura epsecificada no final
       right: 0,left: 0, // seta-los como zeros alinha meu botao ao centro
       child: Center(  // filho, ou seja, especifica o conteudo interno que no caso é a animacao da arrow com o background
-        child: Container(
-          height: 90,
-          width: 90, //padding: EdgeInsets.all(0),
-          decoration: BoxDecoration(
-              color: Colors.red, //borderRadius: BorderRadius.circular(0),
-             ),
-          child: 
-               Container(decoration: BoxDecoration(color: Colors.blue,
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                  child: Icon(
-                    Icons.arrow_forward,
-                    color: Colors.white,
-                  ), // uma 'arvore' composta por  
-                )
-        ),
+        child: ElevatedButton(
+          child: Text("clique aqui"),
+          style: ElevatedButton.styleFrom(
+            padding: EdgeInsets.all(30.0),
+          ),
+          onPressed: (() {
+            print("oi");
+          }),
+          
+          // height: 90,
+          // width: 90, //padding: EdgeInsets.all(0),
+          // decoration: BoxDecoration(
+          //     color: Colors.blue, //borderRadius: BorderRadius.circular(0),
+          //    ),
+          // child: 
+          //      Container(decoration: BoxDecoration(color: Colors.blue,
+          //             borderRadius: BorderRadius.circular(30),
+          //           ),
+          //         child: Icon(
+          //           Icons.arrow_forward,
+          //           color: Colors.white,
+          //         ), // uma 'arvore' composta por  
+          //       )
+        ),     
       ),
     );
   }
   Widget buildTextField(
       IconData icon, String hintText, bool isPassword, bool isEmail) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 8.0),
+      padding: const EdgeInsets.only(bottom: 18.0),
       child: TextField(
         obscureText: isPassword,
         keyboardType: isEmail ? TextInputType.emailAddress : TextInputType.text,
